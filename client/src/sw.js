@@ -17,8 +17,8 @@ var cacheFiles = [
     './manifest.json'
 ]
 var upgredeResource = [
-    'http://localhost:3000/categories',
-    'http://localhost:3000/products',
+    'https://mpr75aa5n1.execute-api.eu-west-1.amazonaws.com/dev/categories',
+    'https://mpr75aa5n1.execute-api.eu-west-1.amazonaws.com/dev/products',
 
 ]
 var syncResource = [];

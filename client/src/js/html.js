@@ -111,7 +111,7 @@ function getShoppingCartProduct() {
             return response.json();
         }).then(function (json) {
             return json;
-        });
+        }).catch(function () { Materialize.toast('You are offline! ', 2000) })
 }
 function getProducts() {
     return fetch('https://mpr75aa5n1.execute-api.eu-west-1.amazonaws.com/dev/products')
@@ -223,12 +223,14 @@ function addToCart(event) {
         }
     })
         .then(function (response) {
+            Materialize.toast('Product add to shoppinCart! ', 2000);
             return response.json();
+            
         })
         .then(function (json) {
             return console.log(json);
         })
-    Materialize.toast('Product add to shoppinCart! ', 2000)
+        .catch(function(){Materialize.toast('You are offline! ', 2000)})
 }
 function removeToCart(id) {
     let data = {

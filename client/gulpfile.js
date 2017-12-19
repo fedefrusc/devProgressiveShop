@@ -1,34 +1,32 @@
 var gulp = require('gulp');
-var dest = require('gulp-dest');
 var awspublish = require('gulp-awspublish');
 
-gulp.task('getCss', function(){
-    gulp.src(['**/css/**/*', '!./node_modules/**'])
-        .pipe(dest('all', { basename : 'all'}))
-        .pipe(gulp.dest('./'))
-        .pipe(awspublish.reporter());
-})
+var dest = __dirname + "/dist"
 
-gulp.task('getDist', function () {
-    gulp.src(['./dist/**/*', '!./node_modules/**'])
-        .pipe(dest('all'))
-        .pipe(gulp.dest('./'))
+gulp.task('getCss', function(){
+    return gulp.src(['./src/css/**/*', './node_modules/materialize-css/dist/css/materialize.min.css'])
+        .pipe(gulp.dest(dest + '/css'))
 })
 
 gulp.task('getfonts', function () {
-    gulp.src(['./fonts/**/*', '!./node_modules/**']).pipe(gulp.dest('all/'));
+    return gulp.src(['./src/fonts/**/*'])
+        .pipe(gulp.dest(dest + '/fonts'));
 })
 
 gulp.task('getImages', function () {
-    gulp.src(['./images/**/*', '!./node_modules/**']).pipe(gulp.dest('all/'));
+    return gulp.src(['./src/images/**/*'])
+        .pipe(gulp.dest(dest + '/images'));
 })
 
 gulp.task('getFiles', function () {
-    gulp.src(['./index.html', './sw.js' , './manifest.json', '!./node_modules/**']).pipe(gulp.dest('all/'));
+    return gulp.src(['./src/index.html', './src/sw.js' , './src/manifest.json', './src/favicon.ico'])
+        .pipe(gulp.dest(dest));
 })
 
+gulp.task('build', ['getCss', 'getfonts', 'getImages', 'getFiles']);
 
-gulp.task('publish', ['getCss', 'getDist', 'getfonts', 'getImages', 'getFiles'], function () {
+
+gulp.task('publish', ['build'], function () {
 
     // create a new publisher using S3 options
     var publisher = awspublish.create({
@@ -40,8 +38,7 @@ gulp.task('publish', ['getCss', 'getDist', 'getfonts', 'getImages', 'getFiles'],
 
     // define custom headers
     var headers = {};
-
-    return gulp.src(['./all/**/*'])//,'./dist/*', './fonts/*', './images/*', './html.js','./sw.js', './manifest.json'])
+    return gulp.src([dest + '/**/*'])
         // gzip, Set Content-Encoding headers and add .gz extension
         //.pipe(awspublish.gzip({ ext: '.gz' }))
 
