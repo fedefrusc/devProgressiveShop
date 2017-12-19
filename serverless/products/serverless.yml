@@ -110,4 +110,7 @@ custom:
             sources: [./data/shoppingCart.json]
           - table: categories
             sources: [./data/categories.json]
-     
+
+
+  serverless-offline:
+    port: 4000

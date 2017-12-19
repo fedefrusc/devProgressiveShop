@@ -1,14 +1,13 @@
-
-var cacheName = 'v4';
+const config = require('./config')
+var cacheName = 'v1';
 
 var cacheFiles = [
     './',
     './index.html',
     './css/stylesheet.css',
-    './css/materialize.css',
     './css/materialize.min.css',
     'https://fonts.googleapis.com/icon?family=Material+Icons',
-    './dist/main.bundle.js',
+    './main.bundle.js',
     './images/offline.png',
     './fonts/roboto/Roboto-Bold.woff2',
     './fonts/roboto/Roboto-Medium.woff2',
@@ -17,8 +16,8 @@ var cacheFiles = [
     './manifest.json'
 ]
 var upgredeResource = [
-    'https://mpr75aa5n1.execute-api.eu-west-1.amazonaws.com/dev/categories',
-    'https://mpr75aa5n1.execute-api.eu-west-1.amazonaws.com/dev/products',
+    config.serverUrl + '/categories',
+    config.serverUrl + '/products',
 
 ]
 var syncResource = [];
@@ -28,12 +27,16 @@ self.addEventListener('install', function (e) {
     e.waitUntil(
         caches.open(cacheName)
             .then(cache => addFilesToCache(cacheFiles, cache))
+           
     )
 })
 //aggiunge tutti i file nell'array alla cache
 function addFilesToCache(cacheFiles, cache) {
     console.log("[ServiceWorker] Caching cacheFiles ");
-    return cache.addAll(cacheFiles);
+    caches.open('v1')
+        .then(cache => cache.keys())
+        .then(keys => console.log(`All the keys: ${keys}`));
+    return cache.addAll(cacheFiles)
 }
 
 self.addEventListener('activate', function (e) {

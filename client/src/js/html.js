@@ -1,4 +1,4 @@
-
+const config = require('./config')
 //function that generate html page for each products
 function generateProduct(product) {
     return ` <div class="col s12 m6 l6 xl4 ">
@@ -76,7 +76,7 @@ function generateTotal(shopProducts, i) {
 }
 
 function getProductById(id) {
-    return fetch('https://mpr75aa5n1.execute-api.eu-west-1.amazonaws.com/dev/products')
+    return fetch(config.serverUrl + '/products')
         .then(function (response) {
             return response.json();
         }).then(function (json) {
@@ -86,7 +86,7 @@ function getProductById(id) {
         });
 }
 function getCategory() {
-    return fetch('https://mpr75aa5n1.execute-api.eu-west-1.amazonaws.com/dev/categories').then(function (response) {
+    return fetch(config.serverUrl + '/categories').then(function (response) {
         console.log(response);
         return response.json();
     }).then(function (json) {
@@ -95,7 +95,7 @@ function getCategory() {
 
 }
 function getProductByCategory(id) {
-    return fetch('https://mpr75aa5n1.execute-api.eu-west-1.amazonaws.com/dev/products')
+    return fetch(config.serverUrl + '/products')
         .then(function (response) {
             return response.json();
         }).then(function (json) {
@@ -106,7 +106,7 @@ function getProductByCategory(id) {
 }
 
 function getShoppingCartProduct() {
-    return fetch('https://mpr75aa5n1.execute-api.eu-west-1.amazonaws.com/dev/shoppingCart')
+    return fetch(config.serverUrl + '/shoppingCart')
         .then(function (response) {
             return response.json();
         }).then(function (json) {
@@ -114,7 +114,7 @@ function getShoppingCartProduct() {
         }).catch(function () { Materialize.toast('You are offline! ', 2000) })
 }
 function getProducts() {
-    return fetch('https://mpr75aa5n1.execute-api.eu-west-1.amazonaws.com/dev/products')
+    return fetch(config.serverUrl + '/products')
         .then(function (response) {
             return response.json();
         })
@@ -214,7 +214,7 @@ function addToCart(event) {
         quantity: quantity
     }
     console.log(JSON.stringify(data));
-    fetch("https://mpr75aa5n1.execute-api.eu-west-1.amazonaws.com/dev/addToCart", {
+    fetch(config.serverUrl + "/addToCart", {
         method: 'POST',
         body: JSON.stringify(data),
         headers: {
@@ -237,7 +237,7 @@ function removeToCart(id) {
         id: id
     }
     console.log(JSON.stringify(data));
-    fetch("https://mpr75aa5n1.execute-api.eu-west-1.amazonaws.com/dev/removeToCart", {
+    fetch(config.serverUrl + "/removeToCart", {
         method: 'POST',
         body: JSON.stringify(data),
         headers: {
