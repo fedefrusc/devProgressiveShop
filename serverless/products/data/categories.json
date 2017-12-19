@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "name": "Games",
+        "src": "images/games.jpg"
+    },
+    {
+        "id": 2,
+        "name": "clothing",
+        "src": "images/clothing.jpg"
+    },
+    {
+        "id": 3,
+        "name": "sports",
+        "src": "images/sports.jpg"
+    },
+    {
+        "id": 4,
+        "name": "electronics",
+        "src": "images/electronics.jpg"
+    },
+    {
+        "id": 5,
+        "name": "books",
+        "src": "images/books.jpg"
+    },
+    {
+        "id": 6,
+        "name": "music",
+        "src": "images/music.jpg"
+    }
+]

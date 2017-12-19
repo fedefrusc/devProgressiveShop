@@ -1,0 +1,113 @@
+service: serverless
+
+plugins:
+  - serverless-offline
+  - serverless-dynamodb-local
+provider:
+  name: aws
+  runtime: nodejs6.10
+  region: eu-west-1 
+  memorySize: 256
+  iamRoleStatements:
+    -  Effect: "Allow"
+       Action:
+         - "dynamodb:*"
+       Resource: "*"
+
+
+functions:
+  products:
+    handler: handler.getProducts
+    events: # All events associated with this function
+      - http:
+          path: products
+          method: GET
+          cors: true
+  categories:
+    handler: handler.getCategories
+    events: # All events associated with this function
+      - http:
+          path: categories
+          method: GET
+          cors: true
+  shoppingCart:
+    handler: handler.getShoppingCart
+    events: # All events associated with this function
+      - http:
+          path: shoppingCart
+          method: GET
+          cors: true
+  addToCart:
+    handler: handler.addToCart
+    events: # All events associated with this function
+      - http:
+          path: addToCart
+          method: POST
+          cors: true
+  removeToCart:
+    handler: handler.removeToCart
+    events: # All events associated with this function
+      - http:
+          path: removeToCart
+          method: POST
+          cors: true
+
+
+resources:
+  Resources:
+    productsTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: products
+        AttributeDefinitions:
+          - AttributeName: id
+            AttributeType: N
+        KeySchema:
+          - AttributeName: id
+            KeyType: HASH
+        ProvisionedThroughput:
+          ReadCapacityUnits: 1
+          WriteCapacityUnits: 1
+    categoriesTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: categories
+        AttributeDefinitions:
+          - AttributeName: id
+            AttributeType: N
+        KeySchema:
+          - AttributeName: id
+            KeyType: HASH
+        ProvisionedThroughput:
+          ReadCapacityUnits: 1
+          WriteCapacityUnits: 1
+    shoppingCartTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: shoppingCart
+        AttributeDefinitions:
+          - AttributeName: id
+            AttributeType: N
+        KeySchema:
+          - AttributeName: id
+            KeyType: HASH
+        ProvisionedThroughput:
+          ReadCapacityUnits: 1
+          WriteCapacityUnits: 1
+    
+
+custom:
+  dynamodb:
+    start:
+      migrate: true
+      seed: true
+    seed:
+      domain:
+        sources:
+          - table: products
+            sources: [./data/products.json]
+          - table: shoppingCart
+            sources: [./data/shoppingCart.json]
+          - table: categories
+            sources: [./data/categories.json]
+     

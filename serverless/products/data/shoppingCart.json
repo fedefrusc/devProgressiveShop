@@ -1,0 +1,10 @@
+[
+    {
+        "id": 4,
+        "name": "Books",
+        "price": 25,
+        "inStock": false,
+        "src": "images/books.jpg",
+        "quantity": 3
+    }
+]

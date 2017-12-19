@@ -1,0 +1,26 @@
+{
+  "name": "PWA",
+  "version": "1.0.0",
+  "description": "",
+  "main": "/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:dev": "webpack-dev-server --host 0.0.0.0"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-awspublish": "^3.3.0",
+    "webpack": "^3.8.1",
+    "webpack-dev-server": "^2.9.5"
+  },
+  "dependencies": {
+    "gulp-dest": "^0.2.3",
+    "jquery": "^3.2.1",
+    "material-design-icons": "^3.0.1",
+    "materialize-css": "^0.100.2",
+    "page": "^1.7.1"
+  }
+}

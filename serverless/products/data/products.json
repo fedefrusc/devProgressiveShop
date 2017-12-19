@@ -1,0 +1,58 @@
+[
+    {
+        "id": 1,
+        "categoryId": 1,
+        "name": "T-Shirt",
+        "price": 25,
+        "inStock": true,
+        "src": "images/clothing.jpg"
+    },
+    {
+        "id": 2,
+        "categoryId": 2,
+        "name": "Call of Duty",
+        "price": 25,
+        "inStock": false,
+        "src": "images/games.jpg"
+    },
+    {
+        "id": 3,
+        "categoryId": 3,
+        "name": "Bicycle",
+        "price": 25,
+        "inStock": false,
+        "src": "images/sports.jpg"
+    },
+    {
+        "id": 4,
+        "categoryId": 4,
+        "name": "Books",
+        "price": 25,
+        "inStock": false,
+        "src": "images/books.jpg"
+    },
+    {
+        "id": 5,
+        "categoryId": 5,
+        "name": "RAM 32GB",
+        "price": 25,
+        "inStock": true,
+        "src": "images/electronics.jpg"
+    },
+    {
+        "id": 6,
+        "categoryId": 6,
+        "name": "The Strokes",
+        "price": 25,
+        "inStock": true,
+        "src": "images/music.jpg"
+    },
+    {
+        "id": 7,
+        "categoryId": 6,
+        "name": "The Test7",
+        "price": 25,
+        "inStock": true,
+        "src": "images/music.jpg"
+    }
+]
