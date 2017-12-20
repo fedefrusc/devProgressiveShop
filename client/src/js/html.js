@@ -458,7 +458,7 @@ function pageAbout(){
         </ul>
         <div class="divider"></div>
         <br>
-        <b>GitHub link:</b><a href="https://github.com/fedefrusc/devProgressiveShop"> progressiveShop
+        <b>GitHub link:</b><a href="https://github.com/fedefrusc/devProgressiveShop" target="_blank"> progressiveShop
         <br></br>
 
     </div>
