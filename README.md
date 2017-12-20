@@ -9,30 +9,26 @@ Cartelle principali :
 > server.
 ## Avvio in locale client
 Scaricare la repository
-
-Per poter avviare in locale l'applicazione è necessario installare tutte le dipendenze presenti nel file
->package.json 
-nella cartella client
+Da terminale andare nella cartella client
 
 eseguire il comando 
+>npm install
+
+successivamente 
+
 >npm run dev 
 
 in questo modo si caricherà l'applicazione in locale 
 
 ## Avvio in locale serverless
 
-Installare nella cartella serverless questi moduli:
->serverless
+Da terminale andare nella cartella serverless/products
 
->serverless-offline
+eseguire il comando 
+>npm install
 
->serverless-dynamodb-client
+successivamente 
 
->serverless-dynamodb-local
-
-tramite il comando npm install.
-
-Successivamente eseguire il comando 
 >serverless offline start 
 
 a questo punto l'applicazione può essere utilizzata in locale 
