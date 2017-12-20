@@ -15,12 +15,12 @@
         "src": "images/sports.jpg"
     },
     {
-        "id": 4,
+        "id": 5,
         "name": "electronics",
         "src": "images/electronics.jpg"
     },
     {
-        "id": 5,
+        "id": 4,
         "name": "books",
         "src": "images/books.jpg"
     },

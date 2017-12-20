@@ -1,7 +1,7 @@
 var page = require('page')
 require('materialize-css')
 require('jquery');
-import { pageMenu, pageProducts, pageCategories, pageDetails, pageShoppingCart, pageNav, addToCart, pageProductsByCategory} from './html';
+import { pageMenu, pageProducts, pageCategories, pageDetails, pageShoppingCart, pageNav, addToCart, pageProductsByCategory, pageAbout} from './html';
 import { setInterval } from 'timers';
 
 
@@ -17,6 +17,7 @@ page('/products/:id', ctx => { pageDetails(ctx.params.id) })
 page('/categories', pageCategories)
 page('/categories/:id', ctx => {pageProductsByCategory(ctx.params.id)})
 page('/shoppingCart', pageShoppingCart)
+page('/about', pageAbout)
 page({ hashbang: true })
 
 

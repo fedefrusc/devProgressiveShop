@@ -46,13 +46,5 @@
         "price": 25,
         "inStock": true,
         "src": "images/music.jpg"
-    },
-    {
-        "id": 7,
-        "categoryId": 6,
-        "name": "The Test7",
-        "price": 25,
-        "inStock": true,
-        "src": "images/music.jpg"
     }
 ]

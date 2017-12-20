@@ -178,19 +178,19 @@ function renderDetails(product) {
                         <br>
                         <div class="row">
                             <div class="col s4 m1 l1 xl1 ">
-                                <img class="materialboxed" width="50" height="50" src="images/clothing.jpg">
+                                <img class="materialboxed" width="50" height="50" src="${product.src}">
                             </div>
                             <div class="col s4 m1 l1 xl1 ">
-                                <img class="materialboxed" width="50" height="50" src="images/clothing.jpg">
+                                <img class="materialboxed" width="50" height="50" src="${product.src}">
                             </div>
                             <div class="col s4 m1 l1 xl1 ">
-                                <img class="materialboxed" width="50" height="50" src="images/clothing.jpg">
+                                <img class="materialboxed" width="50" height="50" src="${product.src}">
                             </div>
                             <div class="col s4 m1 l1 xl1 ">
-                                <img class="materialboxed" width="50" height="50" src="images/clothing.jpg">
+                                <img class="materialboxed" width="50" height="50" src="${product.src}">
                             </div>
                             <div class="col s4 m1 l1 xl1 ">
-                                <img class="materialboxed" width="50" height="50" src="images/clothing.jpg">
+                                <img class="materialboxed" width="50" height="50" src="${product.src}">
                             </div>
                         </div>`;
     
@@ -401,13 +401,71 @@ function pageNav() {
                 <div class="divider"></div>
             </li>
             <li>
-                <a class="subheader">info</a>
+            <a class="subheader">info</a>
             </li>
             <li>
-                <a class="waves-effect" href="#!">The company</a>
+            <a class="waves-effect" href="/about">About</a>
             </li>
-        </ul>`
+            </ul>`
+}
+
+function pageAbout(){
+   return document.getElementById("grid-container").innerHTML =
+`<div class="container">
+            <h3 class="header center">About me</h3>
+            <div class="container">
+                <div class="col-lg-2">
+                <img src="images/avatar.png" class="avatar avatar-100  photo" height="100" width="100"> </div>
+                <div class="col-lg-10">
+                <h5 class="typology-author-box-title">Federico Fruscella</h5>
+                <div class="typology-author-desc">
+                <p>I'm an informatic engineer student at Roma Tre university in Rome.
+                   This project is my first experience in web development with javaScript.</p>
+            </div>
+        <div class="divider"></div>
+        <h4 class="light red-text text-lighten-2 center">Use case of progressive web app.</h4>
+        <blockquote><h5>An application born from Intership in a web development company</h5> </blockquote>
+        <blockquote><h5>This web app is a simulation of an e-commerce application and have all characteristics of Progressive Web App</h5> </blockquote>
+        <div class="divider"></div>
+        <br></br>
+        <ul class="collection with-header">
+            <li class="collection-header"><h5>Characteristics</h5></li>
+            <li class="collection-item">
+                <h6><b>Progressive</b> - Work for every user, regardless of browser choice because they’re built with
+                progressive enhancement as a core tenet.</h6>
+            </li>
+            <li class="collection-item">
+                <b>Responsive</b> - Fit any form factor: desktop, mobile, tablet, or forms yet to emerge.</li>
+            <li class="collection-item">
+                <b>Connectivity independent</b> -
+                Service workers allow work offline, or on low quality networks.</li>
+            <li class="collection-item">
+                <b>App-like</b> - Feel like an app to the user with app-style interactions and navigation.</li>
+            <li class="collection-item">
+                <b>Fresh</b> - Always up-to-date thanks to the service worker update process.</li>
+            <li class="collection-item">
+                <b>Safe</b> - Served via HTTPS to prevent snooping and ensure content hasn’t been tampered with.</li>
+            <li class="collection-item">
+                <b>Discoverable</b> - Are identifiable as “applications” thanks to W3C manifests
+                    and service worker registration scope allowing search engines to find them.</li>
+            <li class="collection-item">
+                <b>Re-engageable</b> - Make re-engagement easy through features like push notifications.</li>
+            <li class="collection-item">
+                <b>Installable</b> - Allow users to “keep” apps they find most useful on their home screen without the hassle of an app
+                store.</li>
+            <li class="collection-item">
+            <b>Linkable</b> - Easily shared via a URL and do not require complex installation.</li>
+        </ul>
+        <div class="divider"></div>
+        <br>
+        <b>GitHub link:</b><a href="https://github.com/fedefrusc/devProgressiveShop"> progressiveShop
+        <br></br>
+
+    </div>
+</div>
+  </div>`
+
 }
 
 
-export { pageMenu, pageProducts, pageCategories, pageDetails, pageShoppingCart, pageNav, addToCart, pageProductsByCategory };
+export { pageMenu, pageProducts, pageCategories, pageDetails, pageShoppingCart, pageNav, addToCart, pageProductsByCategory , pageAbout};

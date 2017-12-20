@@ -6,7 +6,7 @@ var browserSync = require('browser-sync').create();
 var dest = __dirname + "/dist"
 
 
-gulp.task('js', function () {
+gulp.task('webpack', function () {
     return gulp.src('./src/js/main.js')
         .pipe(webpack({
             entry: './src/js/main.js',
@@ -48,7 +48,7 @@ gulp.task('getFiles', function () {
         .pipe(gulp.dest(dest));
 })
 
-gulp.task('build', ['js', 'swjs', 'getCss', 'getfonts', 'getImages', 'getFiles']);
+gulp.task('build', ['webpack', 'swjs', 'getCss', 'getfonts', 'getImages', 'getFiles']);
 
 
 gulp.task('watch', function () {
