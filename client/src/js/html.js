@@ -11,7 +11,7 @@ function generateProduct(product) {
                     <div class="card-content">
                         <span class="card-title activator grey-text text-darken-4">${product.name}</span>
                          <p calss="prod-id" style="display:none">${product.id}</p>
-                        <p class="caption"><b>Price</b>${product.price}</p>
+                        <p class="caption"><b>Price</b> $${product.price}</p>
                         <p class="caption-in-stock ${product.inStock ? "green" : "red"}-text">${product.inStock ? "In Stock" : "Out Of Stock"}</p>
                     </div>
                 </div>

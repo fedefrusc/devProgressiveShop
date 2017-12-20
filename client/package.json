@@ -7,6 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "gulp build",
     "deploy": "gulp publish",
+    "dev": "gulp dev",
     "start:dev": "webpack-dev-server --host 0.0.0.0"
   },
   "keywords": [],
@@ -20,8 +21,6 @@
     "webpack-dev-server": "^2.9.5"
   },
   "dependencies": {
-    "gulp-copy": "^1.0.1",
-    "gulp-dest": "^0.2.3",
     "jquery": "^3.2.1",
     "material-design-icons": "^3.0.1",
     "materialize-css": "^0.100.2",
