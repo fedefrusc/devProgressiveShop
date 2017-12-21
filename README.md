@@ -1,7 +1,7 @@
 # Progressive Store 
 
 ## Questo progetto va ad analizzare tutte le componenti base affinchè una web app si possa definire progressive.
-
+Inoltre ulitilizza un approccio serverless grazi ai servizi offerti da amazon come aws Lambda
 ## Contenuto
 Cartelle principali :
 > client 
